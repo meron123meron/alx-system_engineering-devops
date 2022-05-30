@@ -1,2 +1,2 @@
 #!/bin/bash
-echo */ | wc
+find .vim/* -maxdepth 1 -type d
