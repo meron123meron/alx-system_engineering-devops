@@ -1,2 +1,2 @@
 #!/bin/bash
- alias root="id -u -n" | echo "hello" root
+echo hello $USER
