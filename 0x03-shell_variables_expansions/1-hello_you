@@ -1,2 +1,2 @@
 #!/bin/bash
- alias merry="id -u -n" | echo "hello" merry
+ alias root="id -u -n" | echo "hello" root
