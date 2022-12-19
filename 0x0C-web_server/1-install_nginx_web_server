@@ -2,8 +2,8 @@
 # Install nginx on your web-01
 # Nginx should be listening on port 80
 # print "Hello World"
-apt-get update
-apt-get install -y nginx
+sudo apt-get update
+sudo apt-get install -y nginx
 
 mkdir /etc/nginx/html
 touch /etc/nginx/html/index.html
