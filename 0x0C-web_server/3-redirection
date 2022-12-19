@@ -4,11 +4,12 @@
 # required:The redirection must be a "301 Moved Permanently"
 
 apt-get update
-apt-get install -y nginx
+apt-get -y install nginx
 
-mkdir /etc/nginx/html
-touch /etc/nginx/html/index.html
-echo "Holberton School" > /etc/nginx/html/index.html
+sudo ufw allow 'Nginx HTTP'
+mkdir -p /var/www/html/
+sudo chmod -R 755 /var/www
+echo 'Hello World!' > /var/www/html/index.html
 printf %s "server {
     listen 80;
     listen [::]:80 default_server;
@@ -17,6 +18,10 @@ printf %s "server {
     location /redirect_me {
         return 301 http://youtube.com/;
     }
-}" > /etc/nginx/sites-available/default
+}" > /etc/nginx/sites-enabled/default
 
-service nginx restart
+if [ "$(pgrep -c nginx)" -le 0 ]; then
+	service nginx start
+else
+	service nginx restart
+fi
