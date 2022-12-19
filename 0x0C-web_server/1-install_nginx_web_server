@@ -7,7 +7,7 @@ sudo apt-get install -y nginx
 
 sudo mkdir /etc/nginx/html
 sudo touch /etc/nginx/html/index.html
-sudo echo "Hello World!" > /etc/nginx/html/index.html
+sudo echo "Hello World!" > sudo /etc/nginx/html/index.html
 sudo printf %s "server {
      listen      80 default_server;
      listen      [::]:80 default_server;
